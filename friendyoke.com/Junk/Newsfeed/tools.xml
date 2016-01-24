@@ -1,0 +1,52 @@
+﻿<telerik:RadPanelBar Style="margin-left: 8px;" ID="RadPanelBar1" runat="server" Skin="Office2007"
+			Width="210px" OnItemClick="RadPanelBar1_ItemClick" OnClientItemClicking="OnClientItemClicking">
+  <Items>
+    <telerik:RadPanelItem runat="server" Owner="RadPanelBar1" PostBack="false" Text="Speak & Listen.."
+      Expanded="True">
+      <Items>
+        <telerik:RadPanelItem runat="server"  Selected="True" Text="Friends News Feed"
+          Value="nfeed">
+        </telerik:RadPanelItem>
+        <telerik:RadPanelItem runat="server"  Text="Following Public Profiles" Value="pp">
+        </telerik:RadPanelItem>
+
+      </Items>
+    </telerik:RadPanelItem>
+    <telerik:RadPanelItem runat="server" Text="My Space.." Expanded="True" PostBack="false">
+
+      <Items>
+        <telerik:RadPanelItem runat="server"
+            Text="Messages" Value="mess">
+        </telerik:RadPanelItem>
+        <telerik:RadPanelItem runat="server"
+            Text="My Albums" Value="myal"  >
+        </telerik:RadPanelItem>
+
+        <telerik:RadPanelItem runat="server" Text="'labs' &amp; 'apps'" Value="labs">
+        </telerik:RadPanelItem>
+
+      </Items>
+    </telerik:RadPanelItem>
+    <telerik:RadPanelItem runat="server" Expanded="True" Text="Entertainment"
+        PostBack="False">
+      <Items>
+        <telerik:RadPanelItem runat="server"
+             Text="Break-Time" Value="brk">
+        </telerik:RadPanelItem>
+        <telerik:RadPanelItem runat="server"
+             Text="Video Gallery" Value="vid">
+        </telerik:RadPanelItem>
+        <telerik:RadPanelItem runat="server" Text="Games"
+             Value="games">
+        </telerik:RadPanelItem>
+      </Items>
+    </telerik:RadPanelItem>
+    <telerik:RadPanelItem runat="server" Text="Friends Online" PostBack="false">
+      <ItemTemplate>
+        <div style="color: #000000">
+          &nbsp;&nbsp;&nbsp;Images Of Online Friends
+        </div>
+      </ItemTemplate>
+    </telerik:RadPanelItem>
+  </Items>
+</telerik:RadPanelBar>

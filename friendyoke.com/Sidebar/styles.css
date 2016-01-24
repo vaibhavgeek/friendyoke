@@ -1,0 +1,65 @@
+﻿.example-panel
+{
+	width: 743px;
+	height:560px;
+	background: transparent url('Images/background.png') no-repeat 0 0;
+	padding-top: 34px;
+	padding-left: 7px;
+}
+
+.example-panel .title
+{
+	color:#000;
+	font: 14px 'Segoe UI', Arial, sans-serif;
+	position:absolute;
+	top: 180px;
+	padding-left: 5px;
+}
+
+.RadSplitter
+{
+	border: none !important;
+	margin: 0 !important;
+}
+
+.RadPanelBar .rootGroup
+{
+	border-left: none;
+	border-right: none;
+}
+
+.calendar-container
+{
+	width:220px;
+	margin: 7px auto;
+}
+
+#RadScheduler1Panel
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+div.RadScheduler
+{
+	width: 100%;
+}
+
+/* Styles for the appointment Subject */
+.RadScheduler .rsAptSubject 
+{
+    text-align: left; 
+    margin: 0 0 3px;
+    font-size: 11px; 
+    font-weight: bold; 
+    color: #369;
+    height: 17px;
+    border-bottom: 1px solid #8bf;
+    width: 100%; 
+}	    
+
+/* Remove the Subject underline for all-day appointments */
+.RadScheduler .rsAllDayRow .rsAptSubject 
+{
+    border-bottom: none;
+}

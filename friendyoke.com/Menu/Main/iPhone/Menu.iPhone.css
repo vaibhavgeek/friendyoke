@@ -1,0 +1,137 @@
+div.RadMenu_iPhone
+{
+	height: auto !important;
+}
+
+div.RadMenu_iPhone,
+div.RadMenu_iPhone .rmSlide,
+div.RadMenu_iPhone .rmGroup
+{
+    float: none;
+}
+
+div.RadMenu_iPhone .rmRootGroup,
+div.RadMenu_iPhone .rmGroup,
+div.RadMenu_iPhone .rmSlide,
+div.RadMenu_iPhone .rmItem
+{
+    width: 100% !important;
+}
+
+div.RadMenu_iPhone .rmSlide
+{
+    top: 0;
+    overflow: visible;
+    background: #fff;
+}
+
+.RadMenu_iPhone .rmItem
+{
+    border-bottom: 1px solid #e1e1e1;
+}
+
+div.RadMenu_iPhone a.rmLink,
+div.RadMenu_iPhone a.rmTemplateLink
+{
+    cursor: pointer !important;
+    text-decoration: none;
+    color: #000;
+    font: bold 20px/43px "Segoe UI", Arial, sans-serif;
+    text-indent: 10px;
+    outline: 0;
+    padding: 0;
+    width: 100% !important;
+}
+
+div.RadMenu_iPhone .rmGroup .rmText
+{
+    padding: 0;
+}
+
+.RadMenu_iPhone .rmTemplate a.rmTemplateLink
+{
+	display: block;
+	height: 55px;
+	overflow: hidden;
+	text-indent: 0;
+	line-height: 16px;
+}
+
+.RadMenu_iPhone a.rmLink .rmLeftImage,
+.RadMenu_iPhone a.rmTemplateLink img
+{
+	width: 55px;
+	height: 55px;
+	float: left;
+}
+
+.RadMenu_iPhone a.rmTemplateLink .rmTitle,
+.RadMenu_iPhone a.rmTemplateLink .rmInfo
+{
+	margin-left: 65px;
+	width: 240px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow:hidden;
+	display: block;
+}
+
+.RadMenu_iPhone a.rmTemplateLink .rmTitle
+{
+	font-size: 14px;
+	margin-top: 11px;
+}
+
+.RadMenu_iPhone a.rmTemplateLink .rmInfo
+{
+	font-size: 13px;
+	color: #7f7f7f;
+	font-weight: normal;
+}
+
+.RadMenu_iPhone a.rmTemplateLink:hover .rmInfo
+{
+	color: #fff;
+}
+
+html.RadMenu_Desktop a.rmLink:hover,
+div.RadMenu_iPhone .rmActive > a.rmLink,
+div.RadMenu_iPhone .rmActive > .rmText > a.rmLink,
+div.RadMenu_iPhone a.rmTemplateLink:hover
+{
+    background: transparent url('Menu/ItemSelectedBg.gif') repeat-x 0 0;
+    color: #fff;
+}
+
+html.RadMenu_Desktop a.rmTemplateLink:hover
+{
+    background-position: 0 -43px;
+}
+
+div.RadMenu_iPhone .rmExpandRight
+{
+	background: transparent url('Menu/SubMenuIndicator.gif') no-repeat 100% 0;
+}
+
+.RadMenu_iPhone a.rmTemplateLink .rmExpandRight
+{
+	background-position: 100% -43px;
+}
+
+.RadMenu_Desktop a.rmLink:hover .rmExpandRight,
+.RadMenu_iPhone .rmActive > a.rmLink .rmExpandRight,
+.RadMenu_iPhone .rmActive > .rmText > a.rmLink .rmExpandRight
+{
+	background-position: 100% -98px;
+}
+
+html.RadMenu_Desktop a.rmTemplateLink:hover .rmExpandRight
+{
+	background-position: 100% -141px;
+}
+
+* html .RadMenu_iPhone,
+* html .rmText
+{
+	zoom: 1;
+}

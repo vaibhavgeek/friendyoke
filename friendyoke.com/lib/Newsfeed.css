@@ -1,0 +1,41 @@
+﻿	  .tbber
+     {
+         height:55px;
+         -webkit-border-radius: 8px;
+                  -moz-border-radius: 8px 8px 8px 8px;
+         }
+         
+ .commentboxer
+ { background-color:White;
+ }
+ 
+         .gridder 
+         { width:215px !important;
+             
+             }
+            .mainheader 
+{
+    border-bottom-style: solid; border-bottom-width: medium; border-bottom-color: #959485
+    }
+     .RadUpload input.ruFakeInput
+        {
+            display: none;
+        }
+        .RadUpload input.ruBrowse
+        {
+            width: 115px;
+        } 
+        .RadUpload span.ruFileWrap input.ruButtonHover
+        {
+            background-position: 100% -46px;
+        }
+        .RadUpload input.ruButton
+        {
+            background-position: 0 -46px;
+        }
+        .relative1
+        {
+             width:120px !important;
+              position:relative;
+              top:2px;
+            }

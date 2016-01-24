@@ -1,0 +1,59 @@
+/* Scroll Bar Master Styling Starts Here */
+/* All comments can be freely removed from the css */
+
+/*  scrollgeneric is used for corrective styling of elements, and should not be modified or removed */ 
+
+.scrollgeneric {line-height: 1px;font-size: 1px;position: absolute;top: 0; left: 0;}
+
+.vscrollerbar 
+{width: 8px;
+ 
+ }
+.vscrollerbarbeg {
+                  width: 10px;
+                 background-color: #3b3b3b;
+                 -webkit-border-radius: 8px;
+                  -moz-border-radius: 8px 8px 8px 8px;
+                  }
+.vscrollerbarend 
+{
+    height: 0px;width: 10px;
+    background-color: #FFFFFF;
+     -webkit-border-radius: 8px;
+                  -moz-border-radius: 8px 8px 8px 8px;
+    }
+.vscrollerbase
+{
+    width: 10px;
+    background-color: #FFFFFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+}
+.vscrollerbasebeg 
+{
+    width: 10px;
+    height: 0px !important;
+   
+    }
+.vscrollerbaseend 
+{
+    height: 2px;
+                   width: 10px;
+                  
+                   }
+
+.vscrollerbar, .hscrollerbar 
+{
+    padding: 28px;
+    z-index: 2;}
+.scrollerjogbox 
+{
+    width: 10px;
+    height: 6px;
+    top: auto; 
+    left: auto;
+    bottom: 0px; right: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 3px;}
+
+/* Scroll Bar Master Styling Ends Here */

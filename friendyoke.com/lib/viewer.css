@@ -1,0 +1,27 @@
+﻿.bgof  
+{
+     background-color:#333;
+}
+.abc
+{
+    color: #00156E;
+    font-size: 11px;
+    font: 12px/16px "segoe ui",arial,sans-serif;
+    text-decoration: none;
+    }
+    
+    .abc:hover
+{
+    text-decoration:underline;
+    }
+    .alimg:hover
+    {border: 1px solid #BB3D00;
+       
+        
+        }
+    .alimg
+    {
+       
+        margin-right:2px;
+        margin-left:2px;
+    }

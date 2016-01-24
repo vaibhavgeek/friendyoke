@@ -1,0 +1,292 @@
+﻿<telerik:RadTabStrip ID="RadTabStrip1" runat="server" 
+       
+        EnableEmbeddedSkins="False"  Align="Left"    SelectedIndex="0" Orientation="HorizontalTop" OnClientTabSelecting="onTabSelecting" OnTabClick="RadTabStrip1_TabClick" >
+            <Tabs>
+            
+            <telerik:RadTab runat="server" CssClass="menutem">
+            <TabTemplate>
+            search:
+            <telerik:RadComboBox ID="Search_People" runat="server" AutoPostBack="true" 
+                        DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="ID" 
+                        DropDownWidth="290px" EnableAutomaticLoadOnDemand="true" 
+                        EnableVirtualScrolling="true" Height="190px" HighlightTemplatedItems="True" 
+                        ItemsPerRequest="4" MarkFirstMatch="true" MaxHeight="240px" 
+                     
+                        ShowMoreResultsBox="true" Width="175px" Skin="Office2007">
+                        <HeaderTemplate>
+                            <ul>
+                                <li class="col1">Photo</li>
+                                <li class="col2">Name</li>
+                            </ul>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <ul>
+                                <li class="col1">
+                                    <telerik:RadBinaryImage ResizeMode="Crop" DataValue='<%#Eval("Image") is DBNull ? null : Eval("Image")%>' ID="Image1" runat="server" Height="50px" 
+                                         Width="50px" />
+                                </li>
+                                <li class="col2"><%# DataBinder.Eval(Container.DataItem, "Name") %></li>
+                                <li style="visibility:hidden;">
+                                    <asp:Label ID="ID" runat="server" 
+                                        Text='<%# DataBinder.Eval(Container.DataItem, "ID") %>'>
+                                         </asp:Label>
+                                </li>
+                            </ul>
+                        </ItemTemplate>
+                    </telerik:RadComboBox>
+            </TabTemplate>
+            </telerik:RadTab>
+            
+
+            </Tabs>
+         
+     </telerik:RadTabStrip> 
+
+
+....HOPES
+SELECT     newsfeed.FromID, newsfeed.Message, newsfeed.SendDate, newsfeed.SendTime, newsfeed.P, newsfeed.ID AS NID, [User].Name, Propic.Image, Photos.Photo, 
+                      Albums.Name AS aname, Albums.ID AS aid, [User].ID, newsfeed.AlID
+FROM         newsfeed INNER JOIN
+                      [User] ON newsfeed.FromID = [User].ID INNER JOIN
+                      Propic ON newsfeed.FromID = Propic.UID INNER JOIN
+                      Photos ON newsfeed.P = Photos.ID INNER JOIN
+                      Albums ON Photos.AlbumID = Albums.ID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 113) AND (FriendStatus = 1))) AND (Propic.[Current] = 1) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 113) AND (FriendStatus = 1))) AND (Propic.[Current] = 1)
+ORDER BY NID DESC
+
+
+
+
+
+
+
+
+BETTER CODE .. RETURNS PHOTOS ONLY ..
+SELECT     newsfeed.FromID, newsfeed.Message, newsfeed.SendDate, newsfeed.SendTime, newsfeed.P, newsfeed.ID AS NID, [User].Name, Propic.Image, Photos.Photo
+FROM         newsfeed INNER JOIN
+                      [User] ON newsfeed.FromID = [User].ID INNER JOIN
+                      Propic ON newsfeed.FromID = Propic.UID INNER JOIN
+                      Photos ON newsfeed.P = Photos.ID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 113) AND (FriendStatus = 1))) AND (Propic.[Current] = 1) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 113) AND (FriendStatus = 1))) AND (Propic.[Current] = 1)
+ORDER BY NID DESC
+
+
+
+
+
+
+
+RETURNS PROFILE PIC ALSO .. CLASSICC
+SELECT     newsfeed.Message, newsfeed.P, Photos.Photo, Albums.Name AS aname, Albums.ID AS aid, newsfeed.SendTime, newsfeed.SendDate, [User].Name, [User].ID, 
+                      newsfeed.ID AS NID, [User].Image, newsfeed.FromID, Propic.Image AS profilepic, Propic.[Current]
+FROM         Albums INNER JOIN
+                      [User] ON Albums.UID = [User].ID INNER JOIN
+                      Photos ON Albums.UID = [User].ID INNER JOIN
+                      newsfeed ON Photos.ID = newsfeed.P INNER JOIN
+                      Propic ON newsfeed.FromID = Propic.UID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1))) AND (Propic.[Current] = 1) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1))) AND (Propic.[Current] = 1)
+ORDER BY NID DESC
+
+
+<telerik:RadMenu ID="RadMenu1" Runat="server" Skin="Sitefinity" 
+                  style="top: 0px; left: 20px">
+        <Items>
+            <telerik:RadMenuItem runat="server" Text="Step1 &gt; Enter Account Information" Selected="true" >
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server"  Text="Step 2 &gt; Enter Basic Details">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server"  Text="Step 3 &gt; Complete Your Profile">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Text="Step 4 &gt; Find Friends">
+            </telerik:RadMenuItem>
+        </Items>
+    </telerik:RadMenu>
+
+
+
+
+
+
+
+
+
+
+RETURNS PHOTOS OF ALBUMS OF OUR FRIENDS
+
+
+SELECT     [User].Name, [User].ID, Photos.Photo, Photos.ID AS Expr1, Photos.UID, Photos.AlbumID, Albums.Name AS Expr2, Albums.ID AS aid, Albums.UID AS aidd
+FROM         Albums INNER JOIN
+                      [User] ON Albums.UID = [User].ID INNER JOIN
+                      Photos ON Albums.ID = Photos.AlbumID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1) AND (Albums.ID = 2))) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1) AND (Albums.ID = 2)))
+
+
+
+
+
+
+RETURNS BOTH..........................
+SELECT     newsfeed.Message, newsfeed.P, Photos.Photo, Albums.Name AS aname, Albums.ID AS aid, newsfeed.SendTime, newsfeed.SendDate, [User].Name, [User].ID, 
+                      newsfeed.ID AS NID, [User].Image, newsfeed.FromID
+FROM         Albums INNER JOIN
+                      [User] ON Albums.UID = [User].ID INNER JOIN
+                      Photos ON Albums.UID = [User].ID INNER JOIN
+                      newsfeed ON Photos.ID = newsfeed.P
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1))) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1)))
+ORDER BY NID DESC
+
+
+
+
+
+
+
+RETURNS PHOTOS..........
+SELECT     [User].Name, [User].ID, Photos.Photo, Photos.ID AS Expr1, Photos.UID, Photos.AlbumID, Albums.Name AS Expr2, Albums.ID AS Expr3, Albums.UID AS Expr4
+FROM         Albums INNER JOIN
+                      [User] ON Albums.UID = [User].ID INNER JOIN
+                      Photos ON Albums.ID = Photos.AlbumID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1))) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1)))
+
+RETURNS NEWSFEED TEXT.......
+
+SELECT     User_1.Name, User_1.ID AS UID, p.FromID, p.Message, p.SendDate, p.SendTime, p.ID AS NID
+FROM         [User] AS User_1 INNER JOIN
+                      newsfeed AS p ON User_1.ID = p.FromID
+WHERE     (User_1.ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1))) OR
+                      (User_1.ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="javascript:OpenFileExplorerDialog(<%#h(Container.DataItem)%>)">
+                     <telerik:RadBinaryImage runat="server" ID="RadBinaryImage1" DataValue='<%#photobyte(Container.DataItem)%>'
+                                AutoAdjustImageControlSize="true" Width='<%#h(Container.DataItem)%>' Height='<%#w(Container.DataItem)%>' 
+                                ResizeMode="Fit"/></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //This function is called from the Explorer.aspx page
+      //  function OnFileSelected(wnd, fileSelected) {
+           // var textbox = $get("<%= fileName.ClientID %>");
+           // textbox.value = fileSelected;
+
+
+		SELECT     [User].Name, [User].Image, [User].ID, s.FromID, s.Message, s.SendDate, s.SendTime, s.ID AS NID, s.Photo, s.AlbumID, al.ID AS aid, al.Name AS alName
+FROM         [User] INNER JOIN
+                      newsfeed AS s ON [User].ID = s.FromID INNER JOIN
+                      Albums AS al ON s.AlbumID = al.ID
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1))) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1))) OR
+                     
+
+
+
+
+ORDER BY NID DESC
+
+
+
+SELECT     [User].Name, [User].ID AS UID, s.FromID, s.Message, s.SendDate, s.SendTime, s.ID AS NID, s.PID, Photos.ID, Photos.Image, Photos.UID AS PfromID, 
+                      Photos.Description, Photos.AlbumID
+FROM         [User] INNER JOIN
+                      newsfeed AS s ON [User].ID = s.FromID CROSS JOIN
+                      Photos
+WHERE     ([User].ID IN
+                          (SELECT     MyID AS ID
+                            FROM          Friends AS Friends_2
+                            WHERE      (FriendID = 84) AND (FriendStatus = 1) AND (s.PID = Photos.ID))) OR
+                      ([User].ID IN
+                          (SELECT     FriendID AS ID
+                            FROM          Friends AS Friends_1
+                            WHERE      (MyID = 84) AND (FriendStatus = 1)))
+ORDER BY NID DESC

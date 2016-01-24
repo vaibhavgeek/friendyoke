@@ -1,0 +1,873 @@
+﻿
+
+/* inline-block elements */
+.gallAppHeader h1 a,
+.gallAppHeader h1 span,
+.gallAppLeftContent,
+.gallAppRightContent,
+.gallAppRatingLabel,
+.appGalPager a,
+.appGalListViewWrapper .appGallListViewTitle,
+.appGalListViewWrapper .appGallListViewRating,
+.gallAppImageRow,
+.gallAppInfoRow,
+.gallAppUploadControl label,
+.gallAppFooterLeft, 
+.gallAppFooterRight,
+.gallAppFooterLogo,
+.gallAppDemos,
+.gallAppFooterRights address,
+.galAppSamples li,
+.gallAppLinks a 
+{
+	display: inline-block;
+	zoom: 1;
+	*display:inline;
+}
+
+
+.gallAppRightBgr 
+{
+	width: 362px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	min-height: 100%;
+	background: url(../Images/rightBodyBgr.png) repeat-y top right;
+	z-index: -1;
+}
+
+.gallAppInfo 
+{
+	width: 35px;
+	height: 71px;
+	position: absolute;
+	top: 70px;
+	right: 0px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border-radius: 35px 0 0 35px;
+	z-index: 15000;
+}
+
+.gallAppInfoOpen 
+{
+	background-color: #32b9ff;
+}
+
+.gallAppInfo .gallAppHideInfo 
+{
+	background-image: url(../Images/arrowRight.png) !important;
+	background-repeat: no-repeat;
+	background-position: 12px 34px;
+}
+
+.gallAppInfoContent 
+{
+	width: 350px;
+	height: 460px;
+}
+
+/* Info content round button IE6-IE8 hacks */
+.gallAppInfoContent .RadButton 
+{
+	*background-image: url(../Images/infoButtonOld.png) !important;
+	*background-position: 0 0;
+}
+
+.gallAppInfoContent .RadButton:hover
+{
+	*background-position: -37px 0;
+}
+
+.gallAppInfoContent .RadButton.gallAppHideInfo 
+{
+	*background-image: url(../Images/arrowRight.png) !important;
+	*background-position: 12px 34px;
+}
+
+@media \0screen {
+  .gallAppInfoContent .RadButton 
+		{
+			background-image: url(../Images/infoButtonOld.png) !important;
+			background-position: 0 0;
+		}
+   .gallAppInfoContent .RadButton:hover
+		{
+			background-position: -37px 0;
+		}
+   .gallAppInfoContent .RadButton.gallAppHideInfo 
+		{
+			background-image: url(../Images/arrowRight.png) !important;
+			background-position: 12px 34px;
+		}
+}
+/* End Info content round button IE6-IE8 hacks */
+
+.gallAppLinks 
+{
+	border-top: 1px solid #fff;
+	margin: -32px 0 0 40px;
+	color: #fff;
+}
+
+.gallAppLinks h2 
+{
+	padding: 30px 0 0;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+.gallAppLinks h3 
+{
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: normal;
+	padding: 0 0 20px 0;
+}
+
+.gallAppLinks a 
+{
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 22px;
+	width: 150px;
+}
+
+.gallAppLinks a:hover 
+{
+	text-decoration: underline;
+}
+
+.gallAppLinks .gallAppSrcCode 
+{
+	font-size: 20px;
+	width: 300px;
+	height: 34px;
+	line-height: 30px;
+	background: url(../Images/srcCodeArrowDown.gif) no-repeat 0 0;
+	padding-left: 44px;
+}
+
+.gallAppWrapper
+{
+	width: 925px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
+}
+
+/* header styles */
+.gallAppHeader
+{
+	height: 110px;
+	position: relative;
+}
+
+
+.gallAppHeader h1
+{
+	padding: 33px 0 0;
+}
+
+.gallAppHeader h1 a
+{
+	width: 154px;
+	height: 43px;
+	background: url(../Images/appGalLogo.png) 0 -5px no-repeat;
+}
+
+.gallAppHeader h1 a:hover
+{
+	background: url(../Images/appGalLogo.png) 0 -50px no-repeat;
+}
+
+.gallAppHeader h1 span
+{
+	width: 127px;
+	margin: 0 0 0 -7px;
+	padding: 5px 0 5px 15px;
+	vertical-align: top;
+	font-size: 11px;
+	font-weight: lighter;
+	text-transform: uppercase;
+	border-left: 1px solid #9c9c9c;
+}
+
+.gallAppHeader .gallAppUpload
+{
+	position: absolute;
+	width: 140px;
+	height: 35px;
+	right: 0;
+	top: 42px;
+}
+
+ a.RadButton.rbLinkButton.headerUpload
+{
+	border: 0;
+	padding: 0;
+	color: #333;
+	font-size: 14px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.gallAppUpload .rbLinkButton.headerUpload:hover
+{
+	background: none;
+	color: #32b9ff;
+}
+
+/* content styles */
+
+.gallAppLeftContent,
+.gallAppRightContent 
+{
+	vertical-align:  top;
+	border-top: 1px solid #9c9c9c;
+	padding: 30px 0 60px 0;
+}
+
+.gallAppLeftContent 
+{
+	width: 640px;
+	position: relative;
+}
+
+.gallAppSwitchViewButtons 
+{
+	background: #fff;
+	padding: 0 0 0 2px;
+	position: absolute;
+	width: 68px;
+	right: 0;
+	top: -18px;
+}
+
+a.appGalBtnListView,
+a.appGalBtnGridView 
+{
+	vertical-align: top;
+	padding: 0;
+}
+
+.rbToggleButton.RadButton.appGalBtnListView .rbToggleRadioChecked, 
+.rbToggleButton.RadButton.appGalBtnListView .rbToggleRadio, 
+.rbToggleButton.RadButton.appGalBtnGridView .rbToggleRadioChecked, 
+.rbToggleButton.RadButton.appGalBtnGridView .rbToggleRadio
+{
+	background-position: 0 0;
+}
+
+.appGalBtnListView:hover,
+.appGalBtnGridView:hover,
+.btnSelected.rbToggleButton
+{
+	background-color: #32b9ff;
+	border-radius: 45px; 
+}
+
+/*.RadButton.AppGalSelectedView 
+{
+	background-color: #333;
+	border-radius: 15px; 
+}*/
+
+/* Image Wrapper */
+
+.gallAppImgCont .gallAppImgWrapper
+{
+    width: auto;
+    max-width: 640px;
+    height: auto;
+    max-height: 640px;
+    text-align: center;
+    padding: 0 0 25px 0;
+}
+
+.gallAppRightContent 
+{
+	width: 240px;
+	margin: 0 0 0 40px;
+}
+
+.gallAppRightContent h2,
+.gallAppRightContent h3
+{
+    padding: 0 0 15px 0;
+}
+
+.gallAppShareSection
+{
+    padding: 10px 0 0;
+}
+
+.gallAppShareSection .RadRating
+{
+    margin: 0 0 0 -4px;
+}
+
+.gallAppShareSection .RadSocialShare 
+{
+    border: 0;
+    padding-left: 0;
+    display: block;
+}
+
+.gallAppRightContent p
+{
+    padding: 0 0 3px 0;
+    line-height: 16px;
+}
+
+/* rating, label and social share alignment */
+
+.gallAppShareSection .RadRating
+{
+    float: left;
+}
+
+.gallAppRatingLabel
+{
+    padding: 0 0 0 5px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+}
+
+/* rotator styles */
+.gallAppRotator 
+{
+    width: 649px;
+	margin: auto;
+	padding: 0 0 22px;
+}
+
+div.gallAppRotator .rrClipRegion 
+{
+    border: 0;
+}
+
+.gallAppRotator .RadRotator .rrButton 
+{
+    background-image: url(../Images/rotatorSprite.png);
+    background-repeat: no-repeat;
+}
+
+div.gallAppRotator .rrButton {
+    height: 34px;
+    line-height: 34px;
+    width: 18px;
+    margin: -16px 0 0;
+}
+
+.gallAppRotator .rrButton.rrButtonLeft,
+.gallAppRotator .rrButton.rrButtonLeft.rrButtonDisabled,
+.gallAppRotator .rrButton.rrButtonLeft.rrButtonDisabled:hover
+{
+    background-position: 0 -36px;
+}
+
+.gallAppRotator .rrButton.rrButtonLeft:hover
+{
+    background-position: -22px -36px;
+}
+
+.gallAppRotator .rrButton.rrButtonRight,
+.gallAppRotator .rrButton.rrButtonRight.rrButtonDisabled,
+.gallAppRotator .rrButton.rrButtonRight.rrButtonDisabled:hover
+{
+    background-position: 0 0;
+}
+
+.gallAppRotator .rrButton.rrButtonRight:hover
+{
+    background-position: -22px 0;
+}
+
+.gallAppRotator .RadRotator .rrItem
+{
+    border: 2px solid transparent;
+}
+
+.gallAppRotator .RadRotator .rrSelectedItem
+{
+    border: 3px solid #32b9ff;
+    margin: -1px;
+}
+
+/* Fix button right position in Safari and Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	{
+		.gallAppRotator .rrButton.rrButtonRight
+		{
+			margin-top: -8px;
+			margin-right: -16px;
+		}
+		
+		.gallAppRotator .rrButton.rrButtonRight.rrButtonDisabled 
+		{
+			margin-top: -16px;
+			margin-right: 1px;
+		}
+		
+	}
+	
+
+/* disabled button */
+.gallAppRotator .rrButton.rrButtonLeft.rrButtonDisabled,
+.gallAppRotator .rrButton.rrButtonRight.rrButtonDisabled
+{
+    opacity:0.1;
+    filter:alpha(opacity=10); /* For IE8 and earlier */
+}
+
+/* pager styles */
+.appGalPager 
+{
+	clear: both;
+	padding: 20px 0 0;
+}
+
+.appGalPager a
+{
+	vertical-align: top;
+	height: 31px;
+	line-height: 31px;
+	width: 31px;
+	border-radius: 45px;
+	text-decoration: none;
+	color: #000;
+	text-align: center;
+	border: 1px solid transparent;
+}
+
+.appGalPager a:hover 
+{
+	border: 1px solid #333;
+}
+
+.appGalPager a.appGalCurrentPageButton
+{
+	color: #fff;
+	background: #333;
+}
+
+/* list view */
+.appGalListViewWrapper 
+{
+	clear: both;
+	overflow: auto;
+}
+.appGalListViewWrapper .appGalListViewItem 
+{
+	float: left;
+	width: 181px;
+	height: 182px;
+	overflow: hidden;
+	padding: 15px 15px 5px 15px;
+	border-radius: 5px;
+}
+
+.appGalListViewWrapper .appGalListViewItem:hover 
+{
+	background: #e1e1e1;
+	color: #333;
+}
+
+.appGalListViewWrapper .appGalListViewItem img
+{
+	width: 180px;
+	height: 140px;
+	border: 0;
+}
+
+.appGalListViewWrapper .appGallListViewTitle,
+.appGalListViewWrapper .appGallListViewRating 
+{
+	vertical-align: top;
+	height: 15px;
+	line-height: 15px;
+}
+
+.appGalListViewWrapper .appGallListViewTitle 
+{
+	width: 115px;
+	height: 30px;
+	overflow: hidden;
+	text-align: left;
+}
+
+.appGalListViewWrapper .appGallListViewRating 
+{
+	width: 60px;
+	text-align: right;
+}
+
+.appGalListViewWrapper .appGalListViewItem:hover .appGallListViewRating 
+{
+	color: #9c9c9c;
+}
+
+/* grid styles */
+.appGalGridViewWrapper .RadGrid 
+{
+	border: 0;
+	color: #9c9c9c;
+}
+
+div.appGalGridViewWrapper .rgHeader 
+{
+	background-image: none;
+	background-color: transparent;
+	border-color: #e1e1e1;
+	color: #9c9c9c;
+	text-transform: uppercase;
+}
+
+div.appGalGridViewWrapper td img 
+{
+	border: 0;
+}
+
+div.appGalGridViewWrapper .rgRow:hover,
+div.appGalGridViewWrapper .rgAltRow:hover
+{
+	cursor: pointer;
+	background-color: #e1e1e1;
+}
+
+div.appGalGridViewWrapper .rgRow td 
+{
+	padding: 9px 8px;
+	border-width: 0;
+}
+
+.appGalGridViewWrapper .appGallTitle 
+{
+	color: #000;
+	font-size: 16px;
+	padding: 0 0 4px;
+}
+
+.appGalGridViewWrapper .appGallLocation 
+{
+	font-size: 13px;
+	padding-top: 20px;
+}
+
+/* Upload Styles */
+.gallAppUploadWrapper 
+{
+	position: relative;
+}
+
+.gallAppUploadWrapper .gallAppUploadControl .rfdSkinnedButton 
+{
+	position: absolute;
+	top: 19px;
+	right: 0;
+}
+
+.gallAppUploadWrapper .RadAsyncUpload
+{
+	width: 100% !important;
+}
+
+.gallAppUploadWrapper .RadUpload .ruInputs li 
+{
+    margin: 0 0 20px;
+}
+.gallAppImageRow,
+.gallAppInfoRow,
+.gallAppUploadControl label
+{
+	vertical-align: top;
+}
+
+.gallAppImageRow 
+{
+	width: 210px;
+}
+
+.gallAppInfoRow 
+{
+	width: 430px;
+}
+
+.gallAppInfoRowWrapper {
+	padding: 0 0 10px 0
+}
+
+.RadForm.rfdTextbox .gallAppInfoRowWrapper input[type=text],
+.RadForm.rfdTextbox .gallAppInfoRowWrapper textarea 
+{
+	width: 348px;
+	overflow: hidden;
+}
+
+/* Upload IE9 fix */
+._Telerik_IE9.RadForm.rfdTextbox .gallAppInfoRowWrapper textarea 
+{
+	width: 348px;
+}
+
+/* Upload webkit fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.RadForm.rfdTextbox .gallAppInfoRowWrapper textarea 
+{
+	width: 346px;
+}
+.rfdRadio .gallAppInfoRowWrapper label {
+	vertical-align: top;
+}
+}
+
+.gallAppInfoRowWrapper textarea {
+	height: 70px;
+	*overflow: hidden;
+}
+
+.gallAppUploadControl label 
+{
+	width: 70px;
+	text-align: right;
+	padding: 5px 4px 0 0;
+	vertical-align: top;
+}
+
+*+html .gallAppUploadControl label 
+{
+	line-height: 15px;
+}
+
+.gallAppUploadButton 
+{
+	text-align: right;
+}
+
+.gallSuccessUpload 
+{
+	display: block;
+	padding: 0 0 20px 0;
+}
+
+/* footer styles */
+
+.gallAppFooter 
+{
+	height: 190px;
+	background: #333;
+	width: 100%;
+	padding: 30px 0 0;
+	*border-top: 1px solid #333;
+	*position: relative;
+	*height: 200px;
+	*padding-bottom: 10px;
+	
+}
+
+.gallAppPush {
+	height: 220px;
+}
+
+.gallAppFooterWrapper 
+{
+	width: 920px;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #4e4e4e;
+}
+
+.gallAppFooterLeft, 
+.gallAppFooterRight 
+{
+	padding: 0 0 12px 0;
+	vertical-align: top;
+}
+
+.gallAppFooterLeft 
+{
+	width: 420px;
+}
+
+.gallAppFooterRight 
+{
+	width: 471px;
+	margin: 0 0 0 25px;
+}
+
+.gallAppFooter h4 
+{
+	border-bottom: 1px solid #4e4e4e;
+	text-transform: uppercase;
+	padding: 0 0 3px  0;
+}
+
+.gallAppFooterLogo 
+{
+	width: 182px;
+	margin: 12px 0 0;
+	text-decoration: none;
+	color: #9c9c9c;
+}
+
+.gallAppFooterImg,
+.gallAppFooterText 
+{
+	display: block;
+}
+
+.gallAppFooterImg
+{
+	background: url(../Images/ASP.NET-AJAX-logo.png) no-repeat 0 0;
+	height: 28px;
+	margin: 0 0 10px 0;
+}
+
+.gallAppFooterImg:hover
+{
+	background: url(../Images/ASP.NET-AJAX-logo.png) no-repeat 0 -30px;
+}
+
+.gallAppFooterText 
+{
+	font-size: 10px;
+	margin: 0 0 10px 0;
+	
+}
+
+.gallAppDemos 
+{
+	list-style: none;
+	vertical-align: top;
+	text-transform: uppercase;
+}
+
+.gallAppDemos a 
+{
+	font-size: 10px;
+	line-height: 16px;
+	color: #9e9e9e;
+	text-decoration: none;
+	padding: 0 0 0 15px;
+	background: url(../Images/rightArrow.png) no-repeat 2px 4px;
+}
+
+.gallAppDemos a:hover
+{
+	color: #32b9ff;
+	background: url(../Images/rightArrow.png) no-repeat 2px -20px;
+}
+
+.gallAppFooterRights 
+{
+	width: 920px;
+	margin: 0 auto;
+	padding: 10px 0 0;
+}
+
+.gallAppFooterRights address 
+{
+	width: 223px;
+	font-style: normal;
+	font-size: 10px;
+	line-height: 16px;
+}
+
+.gallAppTelerikFooterLogo 
+{
+	width: 96px;
+	height: 34px;
+	background: url(../Images/telerikLogo.png) no-repeat 0 0;
+	float: right;
+}
+
+.gallAppTelerikFooterLogo:hover
+{
+	background: url(../Images/telerikLogo.png) no-repeat 0 -40px;
+}
+
+.galAppSamples 
+{
+	list-style: none;
+	margin: 0;
+	padding: 12px 0 0;
+}
+
+.galAppSamples li 
+{
+	padding: 0 5px 0 0;
+}
+
+.galAppSamples a 
+{
+	display: block;
+	width: 64px; 
+	height: 64px;
+	border-radius: 45px;
+	border: 5px solid #333;
+	background-image: url(../Images/appFooterSprite.png);
+	background-repeat: no-repeat;
+}
+
+.galAppSamples a:hover 
+{
+	border-color: #32b9ff;
+}
+
+.galAppSamples .dashboard 
+{
+	background-position: 0 0;
+}
+
+.galAppSamples .dashboard:hover
+{
+	background-position: 0 -64px;
+}
+
+.galAppSamples .carRental 
+{
+	background-position: -64px 0;
+}
+
+.galAppSamples .carRental:hover
+{
+	background-position: -64px -64px;
+}
+
+.galAppSamples .eventScheduler 
+{
+	background-position: -128px 0;
+}
+
+.galAppSamples .eventScheduler:hover
+{
+	background-position: -128px -64px;
+}
+
+.galAppSamples .webMail 
+{
+	background-position: -192px 0;
+}
+
+.galAppSamples .webMail:hover
+{
+	background-position: -192px -64px;
+}
+
+.galAppSamples .store 
+{
+	background-position: -256px 0;
+}
+
+.galAppSamples .store:hover
+{
+	background-position: -256px -64px;
+}

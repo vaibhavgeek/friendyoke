@@ -1,0 +1,147 @@
+﻿<telerik:RadGrid ID="RadGrid1" runat="server" AutoGenerateColumns="False" 
+    CellSpacing="0" GridLines="None" 
+    onneeddatasource="RadGrid1_NeedDataSource">
+<MasterTableView>
+<CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+
+<RowIndicatorColumn FilterControlAltText="Filter RowIndicator column">
+<HeaderStyle Width="20px"></HeaderStyle>
+</RowIndicatorColumn>
+
+<ExpandCollapseColumn FilterControlAltText="Filter ExpandColumn column">
+<HeaderStyle Width="20px"></HeaderStyle>
+</ExpandCollapseColumn>
+
+    <Columns>
+        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" 
+            UniqueName="TemplateColumn">
+            <ItemTemplate>
+            
+            
+                                        <table>
+                                            <tr>
+                                                <td  bordercolor="White" style="border-style:none; border-width: 0px; border-top-color: #FFFFFF" valign="top">
+                                                <a href='#'>
+                                        <telerik:RadBinaryImage ID="sompropic" style="margin-left:0px;" runat="server" DataValue='<%#DataBinder.Eval(Container.DataItem, "Image") %>' Height="35px" Width="35px" ResizeMode="Fit" />
+                                             </a>
+                                                    
+                                                </td>
+                                                <td  bordercolor="White" style="border-style:none; border-width: 0px; border-top-color: #FFFFFF">
+                                                    <%#DataBinder.Eval(Container.DataItem, "Name") %>
+                                                    <br />
+                                                   <b> <div style="width:150px !important;"><%#DataBinder.Eval(Container.DataItem, "Comment") %></div></b>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                   
+            
+            </ItemTemplate>
+
+        </telerik:GridTemplateColumn>
+    </Columns>
+
+<EditFormSettings>
+<EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
+</EditFormSettings>
+</MasterTableView>
+
+<FilterMenu EnableImageSprites="False"></FilterMenu>
+
+<HeaderContextMenu CssClass="GridContextMenu GridContextMenu_Default"></HeaderContextMenu>
+</telerik:RadGrid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ protected void RadGrid1_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        {
+            Button1.Text = this.ProductID;
+            string wtf = this.ProductID;
+            if (wtf.StartsWith("album"))
+            {
+
+                int detid = int.Parse(wtf.Substring(5));
+                string getcomments = @"SELECT     [User].Name, [User].ID, AlbumComments.ID AS CID, AlbumComments.Comment, AlbumComments.AID, AlbumComments.UID, Propic.Image, Propic.[Current]
+FROM         [User] INNER JOIN
+                      AlbumComments ON [User].ID = AlbumComments.UID INNER JOIN
+                      Propic ON AlbumComments.UID = Propic.UID
+WHERE     (AlbumComments.AID = " + detid + @") AND (Propic.[Current] = 1)
+ORDER BY CID";
+
+
+                dt = dbClass.ReturnDT(getcomments);
+                if (dt.Rows.Count == 0)
+                {
+                    RadGrid1.Visible = false;
+                    //  RadTextBox1.EmptyMessage = "Be the 1st to comment";
+                }
+                else
+                {
+                    RadGrid1.DataSource = dt;
+                    
+                }
+
+            }
+            else if (wtf.StartsWith("photo"))
+            {
+                int detid = int.Parse(wtf.Substring(5));
+                string getcomments = @"SELECT     [User].Name, [User].ID, PhotoComments.ID AS CID, PhotoComments.Comment, PhotoComments.PID, PhotoComments.UID, Propic.Image, Propic.[Current]
+FROM         [User] INNER JOIN
+                      PhotoComments ON [User].ID = PhotoComments.UID INNER JOIN
+                      Propic ON PhotoComments.UID = Propic.UID
+WHERE     (Propic.[Current] = 1) AND (PhotoComments.PID = " + detid + @")
+ORDER BY CID";
+
+
+                dt = dbClass.ReturnDT(getcomments);
+                if (dt.Rows.Count == 0)
+                {
+                    RadGrid1.Visible = false;
+                    //RadTextBox1.EmptyMessage = "Be the 1st to comment";
+                }
+                else
+                {
+                    RadGrid1.DataSource = dt;
+                   
+
+                }
+            }
+            else
+            {
+                int detid = int.Parse(wtf.Substring(7));
+                string getcomments = @"SELECT     [User].Name, [User].ID, Comments.ID AS CID, Comments.Comment, Comments.ItemID, Comments.UID, Propic.Image, Propic.[Current]
+FROM         [User] INNER JOIN
+                      Comments ON [User].ID = Comments.UID INNER JOIN
+                      Propic ON Comments.UID = Propic.UID
+WHERE     (Comments.ItemID = " + detid + @") AND (Propic.[Current] = 1)
+ORDER BY CID";
+
+                dt = dbClass.ReturnDT(getcomments);
+                if (dt.Rows.Count == 0)
+                {
+                    RadGrid1.Visible = false;
+                    //RadTextBox1.EmptyMessage = "Be the 1st to comment";
+                }
+                else
+                {
+                    //  RadTextBox1.EmptyMessage = "Click to comment on the post..";
+                    RadGrid1.Visible = true;
+                    RadGrid1.DataSource = dt;
+                   
+                }
+            }
+        } 

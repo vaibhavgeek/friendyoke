@@ -1,0 +1,19 @@
+
+
+
+
+#Navbanner {
+	background: url("../Images/navbanner.png") repeat scroll 0 0 transparent;
+	  position:absolute;
+	left:-35px;
+     width:103.5%;
+    	height: 71px;
+    	
+     
+}
+
+
+
+
+
+/* main level link hover */

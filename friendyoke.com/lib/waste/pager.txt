@@ -1,0 +1,43 @@
+﻿
+ <!-- <script type="text/javascript">
+
+      
+
+
+
+
+         function onitemclick(sender, args) {
+             var multiPage = $find("<%=RadMultiPage1.ClientID%>");
+             var item = args.get_item();
+             var itemt = item.get_value();
+             if (multiPage.get_pageViews().get_count() > 2) {
+                 for (var i = 0; i < multiPage.get_pageViews().get_count(); i++) {
+                     if (multiPage.get_pageViews().getPageView(i).get_id() == itemt) {
+
+                         var pageView = multiPage.findPageViewByID(itemit);
+                         pageView.set_Selceted(true);
+                         pageView.show();
+                         item.set_postBack(false);
+                     }
+                 }
+             }
+            
+         }
+             //var tounselect = multiPage.get_selectedIndex();
+             // multiPage.get_pageViews().getPageView(tounselect).unselect();
+             //var index = pageView.get_index();
+
+
+             /*   function selectPageView()
+             {
+             var pageView = $find("<%= RadMultiPage1.ClientID %>");
+                
+                
+             pageView.get_pageViews().getPageView(pageViewIndex).set_selected(true);
+                
+             return false;
+             }
+             }
+             */
+
+         </script>

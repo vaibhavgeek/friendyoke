@@ -1,0 +1,236 @@
+﻿.divContainerBottom
+        {
+            background: url('Img/bot_back.png') no-repeat;
+            height: 260px;
+            position: relative;
+        }.xmlPanelCustomerInfo
+		{
+			position: absolute;
+			top: 19px;
+			left: 40px;
+		}
+		.country
+		{
+			margin: 4px;
+			border: solid 1px #004759 !important;
+		}
+		.classImg
+		{
+			float: left;
+			border: 1px solid White;
+			border-top-color: #b7ceee;
+			border-left-color: #b7ceee;
+			margin-right: 50px;
+			width: 180px !important;
+			height: 220px !important;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		.title
+		{
+			font-size: 14px;
+			color: #5281ce;
+			width: 300px;
+		}
+		.info
+		{
+			color: #0F3789;
+			font-size: 14px;
+		}
+		.smallUserImage
+		{
+			border: 1px solid #999999;
+			margin: 6px 10px 5px 6px;
+			width: 85px;
+			height: 104px;
+			float: left;
+			background: center no-repeat;
+		}
+        .imagrheader
+{
+    background-image: url('Img/header.png');
+    background-repeat: no-repeat;
+   height: 260px;
+ position: relative;
+}
+.imgfooter
+{
+    background-image:url('Img/footer.png');
+    background-repeat:no-repeat;
+    position: relative; 
+    }
+.example-panelabc
+{
+	background: #aac8e2;
+	padding: 6px;
+	width:736px;
+}
+.example-panelabc ul
+{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.example-panelabc .to-subject-panel ul li
+{
+	padding-bottom: 4px;
+	clear:both;
+}
+
+
+.example-panelabc ul label
+{
+	float:left;
+	width:50px;
+	text-align:right;
+	padding: 3px;
+}
+
+
+.to-subject-panel 
+{
+	background:transparent url(Img/tosubjectBg.png) no-repeat  0 0;
+	height:48px;
+	padding:8px 0 8px 25px;
+}
+
+.to-subject-panel .text
+{
+	display:block;
+	padding:3px 68px;
+}
+
+.to-subject-panel .recipient
+{
+	color:#00156e;
+	text-decoration:underline;
+}
+
+.upload-panel
+{
+	margin-top:6px;
+	padding-bottom: 6px;
+	background:transparent url(Img/uploadBg.png) no-repeat  0 bottom;
+}
+
+.upload
+{
+	padding: 15px;
+	background:transparent url(Img/uploadTopBg.png) no-repeat  0 0;
+	overflow: hidden;
+}
+
+.files
+{
+	padding: 9px 15px;
+	background:transparent url(Img/filesBg.png) no-repeat  0 0;
+}
+
+.editor-panel
+{
+	margin-top:6px;
+}
+.save-button
+{
+	display:block;
+	margin-top:6px;
+	margin-left:auto;
+	width:73px;
+	height:26px;
+	background:transparent url(Img/buttonBg.png) no-repeat  0 0;
+	font: 12px/26px Arial;
+	text-align:center;
+	color:#00156e;
+	text-decoration:none;
+}
+
+.uploaded-file
+{
+	display:block;
+	float:left;
+	overflow:hidden;
+	white-space:nowrap;
+	background: transparent url(Img/check.png) no-repeat 0 5px;
+}
+
+.uploaded-file .download-file
+{
+	font: 12px/20px Arial;
+	color: #000;
+	text-decoration:none;
+	margin-left:15px;
+}
+
+.uploaded-files
+{
+	padding: 10px 0 0 94px;
+	overflow:auto;
+}
+
+.uploaded-file .delete-file
+{
+	background:transparent url(Img/deleteBg.png) no-repeat  0 0;
+	font: 11px/18px Arial;
+	text-align:center;
+	width:44px;
+	height:18px;
+	margin: 0 4px;
+	display:inline-block;
+	text-decoration:none;
+	color: #000;
+}
+
+.attached-files
+{
+	background:transparent url(Img/uploadTopBg.png) no-repeat  0 0;
+	padding:10px 35px;
+}
+
+.mail-body
+{
+	margin-top:3px;
+	background:transparent url(Img/bodyTopBg.png) no-repeat  0 0;
+	padding-top:11px;
+}
+
+.mail-body-mid
+{
+	background:transparent url(Img/bodyMidBg.png) repeat-y  0 0;
+	padding: 0 25px;
+}
+
+.mail-body-bot
+{
+	background:transparent url(Img/bodyBotBg.png) no-repeat  0 0;
+	height:11px;
+}
+
+.back-button
+{
+	display:block;
+	margin-top:6px;
+	width:73px;
+	height:26px;
+	background:transparent url(Img/buttonBg.png) no-repeat  0 0;
+	font: 12px/26px Arial;
+	text-align:center;
+	color:#00156e;
+	text-decoration:none;
+}
+
+.attachment
+{
+	display:inline-block;
+	background: transparent url(Img/attachmentBg.png) no-repeat 3px 3px;
+	border: 1px solid #90b1d0;
+	padding: 4px 4px 4px 20px;
+	margin-bottom: 5px;
+	margin: 0 2px 5px 0;
+}
+
+.attachment a
+{
+	color:#00156E;
+	text-decoration:none;
+}
